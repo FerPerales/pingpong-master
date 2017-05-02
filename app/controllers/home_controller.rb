@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   end
 
   def history
+    @games = Game.where(player_id: current_user.id)
   end
 
   def log
