@@ -16,10 +16,10 @@
         <tbody>
                 <%- @games.each do |game| %>
                         <tr>
-                                <td><%= game.date_played %></td>
-                                <td><%= game.opponent.email %></td>
-                                <td><%= "#{game.own_score} - #{game.opponent_score}"%></td>
-                                <td>W</td>
+                                <td><%= game.date %></td>
+                                <td><%= game.opponent_display_name %>
+                                <td><%= game.score %></td>
+                                <td><%= game.result %></td>
                         </tr>
                 <% end %>
         </tbody>
