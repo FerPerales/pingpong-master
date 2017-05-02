@@ -3,3 +3,17 @@
 <div class="alert alert-warning" role="alert">This is a sample page. Replace link in the header with your own.</div>
 
 <%= image_tag('log_game.png') %>
+
+<%= form_for @game do |f| %>
+        <%= f.label :date_played, "Date Played: " %>
+        <%= f.date_select :date_played, order: [:month, :day, :year] %>
+
+        <%= f.label :own_score, "Your score: " %>
+        <%= f.text_field :own_score, type: :number %>
+
+        <%= f.label :opponent_score, "Their score: " %>
+        <%= f.text_field :opponent_score, type: :number %>
+
+        <%= f.submit "Save" %>
+
+<% end %>
