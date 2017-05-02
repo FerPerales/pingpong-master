@@ -21,6 +21,7 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.new
+    @users_list = User.where.not(id: current_user.id).collect { |p| [ p.email, p.id ] }
   end
 
   private

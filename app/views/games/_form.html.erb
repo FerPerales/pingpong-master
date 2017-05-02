@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :opponent, "Opponent: " %>
-    <%= f.select :opponent_id, User.all.collect { |p| [ p.email, p.id ] }, include_blank: false %>
+    <%= f.select :opponent_id, @users_list, include_blank: false %>
   </div>
   <div class="field">
     <%= f.label :own_score, "Your score: "%><br>
