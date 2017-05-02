@@ -16,14 +16,18 @@
     <%= f.date_select :date_played %>
   </div>
   <div class="field">
-    <%= f.label :opponent_score %><br>
-    <%= f.text_field :opponent_score %>
+    <%= f.label :opponent, "Opponent: " %>
+    <%= f.select :opponent_id, User.all.collect { |p| [ p.email, p.id ] }, include_blank: false %>
   </div>
   <div class="field">
-    <%= f.label :own_score %><br>
+    <%= f.label :own_score, "Your score: "%><br>
     <%= f.text_field :own_score %>
   </div>
+  <div class="field">
+    <%= f.label :opponent_score, "Their score: " %><br>
+    <%= f.text_field :opponent_score %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Save" %>
   </div>
 <% end %>
