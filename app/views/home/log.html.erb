@@ -8,6 +8,11 @@
         <%= f.label :date_played, "Date Played: " %>
         <%= f.date_select :date_played, order: [:month, :day, :year] %>
 
+        <%= f.label :opponent, "Opponent" %>
+        <%= f.select :opponent_id, User.all.collect { |p| [ p.email, p.id ] }, include_blank: true %>
+
+
+
         <%= f.label :own_score, "Your score: " %>
         <%= f.text_field :own_score, type: :number %>
 
